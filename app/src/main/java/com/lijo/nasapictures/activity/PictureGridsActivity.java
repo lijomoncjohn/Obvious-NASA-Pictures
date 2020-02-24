@@ -1,14 +1,16 @@
-package com.lijo.nasapictures;
+package com.lijo.nasapictures.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PictureDetailActivity extends AppCompatActivity {
+import com.lijo.nasapictures.R;
+
+public class PictureGridsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_picture_detail);
+        setContentView(R.layout.activity_picture_grids);
     }
 }
