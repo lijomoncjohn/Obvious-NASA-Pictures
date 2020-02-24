@@ -56,7 +56,7 @@ public class ImageAdapater extends RecyclerView.Adapter<ImageAdapater.MyviewHold
 
         public MyviewHolder(View itemView) {
             super(itemView);
-            image = (itemView).findViewById(R.id.image);
+            image = (itemView).findViewById(R.id.photo);
             title = (itemView).findViewById(R.id.title);
         }
     }
