@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,6 +42,7 @@ public class ImageAdapater extends RecyclerView.Adapter<ImageAdapater.MyviewHold
     @Override
     public void onBindViewHolder(@NonNull ImageAdapater.MyviewHolder holder, final int position) {
         Glide.with(context).load(dataList.get(position).getUrl()).into(holder.image);
+        holder.title.setText(dataList.get(position).getTitle());
     }
 
     @Override
@@ -50,10 +52,12 @@ public class ImageAdapater extends RecyclerView.Adapter<ImageAdapater.MyviewHold
 
     public class MyviewHolder extends RecyclerView.ViewHolder {
        ImageView image;
+       TextView title;
 
         public MyviewHolder(View itemView) {
             super(itemView);
             image = (itemView).findViewById(R.id.image);
+            title = (itemView).findViewById(R.id.title);
         }
     }
 

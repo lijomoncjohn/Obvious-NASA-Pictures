@@ -286,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
         rv_images = findViewById(R.id.rv_image_grid);
         imageResponses = new ArrayList<>();
         imageAdapater = new ImageAdapater(this, imageResponses);
+        rv_images.setAdapter(imageAdapater);
 
         String data = "";
         try {
@@ -309,10 +310,11 @@ public class MainActivity extends AppCompatActivity {
                 ImageResponse imageResponse = new ImageResponse(copyright, date, explanation, hdurl, media_type, service_version, title, url);
                 imageResponses.add(imageResponse);
             }
-            imageAdapater.setDataList(imageResponses);
             imageAdapater.notifyDataSetChanged();
 
-        } catch (JSONException e) {e.printStackTrace();}
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
         loadData();
 
