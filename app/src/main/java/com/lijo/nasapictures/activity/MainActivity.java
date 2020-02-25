@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.os.SharedMemory;
 
+import com.google.gson.Gson;
 import com.lijo.nasapictures.R;
 import com.lijo.nasapictures.adapter.ImageAdapater;
+import com.lijo.nasapictures.helper.SharedPrefManager;
 import com.lijo.nasapictures.model.ImageResponse;
 
 import org.json.JSONArray;
@@ -14,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -311,12 +315,16 @@ public class MainActivity extends AppCompatActivity {
                 imageResponses.add(imageResponse);
             }
             imageAdapater.notifyDataSetChanged();
+            saveData(imageResponses);
 
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
 
+    private void saveData(List data) {
+        Gson gson = new Gson();
+        String json = gson.toJson(data);
+        SharedPrefManager.getInstance(this).setData(json);
+    }
 }
