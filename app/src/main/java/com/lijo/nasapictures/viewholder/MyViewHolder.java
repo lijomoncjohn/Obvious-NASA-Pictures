@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.lijo.nasapictures.R;
 
-public class MyviewHolder extends RecyclerView.ViewHolder {
+public class MyViewHolder extends RecyclerView.ViewHolder {
 
         public ImageView image;
         public TextView title;
 
-        public MyviewHolder(View itemView) {
+        public MyViewHolder(View itemView) {
             super(itemView);
             image = (itemView).findViewById(R.id.photo);
             title = (itemView).findViewById(R.id.title);

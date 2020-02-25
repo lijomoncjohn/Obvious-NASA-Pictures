@@ -11,8 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/rv_image_grid"
         app:spanCount="2"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
+        tools:listitem="@layout/listitem_images"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
 </RelativeLayout>
