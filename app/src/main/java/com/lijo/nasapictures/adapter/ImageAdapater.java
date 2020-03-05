@@ -51,15 +51,5 @@ public class ImageAdapater extends RecyclerView.Adapter<MyviewHolder> {
         return dataList.size();
     }
 
-//    public class MyviewHolder extends RecyclerView.ViewHolder {
-//       ImageView image;
-//       TextView title;
-//
-//        public MyviewHolder(View itemView) {
-//            super(itemView);
-//            image = (itemView).findViewById(R.id.photo);
-//            title = (itemView).findViewById(R.id.title);
-//        }
-//    }
 
 }
