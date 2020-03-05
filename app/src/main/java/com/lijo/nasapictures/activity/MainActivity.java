@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.os.SharedMemory;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.google.gson.Gson;
 import com.lijo.nasapictures.R;
@@ -31,6 +33,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        //
+        Spinner spinner = (Spinner) findViewById(R.id.spinner2);
+        //creating an array of type string
+        String[] years = {"2010","2018","2019","2020"};
+        //creating an array adapter
+        ArrayAdapter<CharSequence> customAdapter = new ArrayAdapter<CharSequence>(this, R.layout.layout_spinner_text, years );
+        customAdapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
+        //binding spinner to customeadapter
+        spinner.setAdapter(customAdapter);
+
+
+
 
         rv_images = findViewById(R.id.rv_image_grid);
         imageResponses = new ArrayList<>();
